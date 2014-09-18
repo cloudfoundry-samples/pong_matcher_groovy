@@ -1,4 +1,3 @@
-import static ratpack.groovy.Groovy.groovyTemplate
 import static ratpack.groovy.Groovy.ratpack
 import static java.util.UUID.randomUUID 
 import groovy.json.JsonSlurper
