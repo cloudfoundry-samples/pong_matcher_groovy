@@ -1,6 +1,6 @@
 import static ratpack.groovy.Groovy.ratpack
 import static java.util.UUID.randomUUID 
-import groovy.json.JsonSlurper
+import groovy.json.*
 
 db = [
   match_requests: [],
@@ -42,7 +42,7 @@ ratpack {
             def found_match = find_unplayed_match(db, match_request)
 
             if (found_match) {
-              def builder = new groovy.json.JsonBuilder()
+              def builder = new JsonBuilder()
               builder(match_id: found_match.id)
               render builder.toString()
             } else {
