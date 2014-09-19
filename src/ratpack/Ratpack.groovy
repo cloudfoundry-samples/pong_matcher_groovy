@@ -1,11 +1,12 @@
 import static ratpack.groovy.Groovy.ratpack
 import static java.util.UUID.randomUUID 
 import groovy.json.*
+import matcher.pong.RedisDriver
 
 db = [
-  match_requests: [],
-  matches: [],
-  results: []
+  match_requests: new RedisDriver("match_requests"),
+  matches: new RedisDriver("matches"),
+  results: new RedisDriver("results")
 ]
 
 ratpack {
