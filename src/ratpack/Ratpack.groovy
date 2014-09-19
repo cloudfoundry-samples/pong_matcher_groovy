@@ -4,9 +4,9 @@ import groovy.json.*
 import matcher.pong.RedisDriver
 
 db = [
-  match_requests: new RedisDriver("match_requests"),
-  matches: new RedisDriver("matches"),
-  results: new RedisDriver("results")
+  match_requests: RedisDriver.fromEnv("match_requests"),
+  matches: RedisDriver.fromEnv("matches"),
+  results: RedisDriver.fromEnv("results")
 ]
 
 ratpack {

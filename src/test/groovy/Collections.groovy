@@ -8,8 +8,8 @@ class Collections extends spock.lang.Specification {
     coll.find { it.containsKey("foo") }.foo == "bar"
 
     where:
-    coll                                        | _
-    []                                          | _
-    new RedisDriver("test_collection_groovy")   | _
+    coll                                            | _
+    []                                              | _
+    RedisDriver.fromEnv("test_collection_groovy")   | _
   }
 }
