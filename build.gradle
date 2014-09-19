@@ -8,8 +8,6 @@ buildscript {
 }
 
 apply plugin: "io.ratpack.ratpack-groovy"
-apply plugin: "idea"
-apply plugin: "eclipse"
 
 repositories {
   jcenter()
