@@ -7,7 +7,7 @@ class RedisDriver {
   private key
   private slurper = new JsonSlurper()
 
-  static def fromEnv(key) {
+  static RedisDriver fromEnv(key) {
     def conf = config()
 
     // workaround until https://github.com/xetorthio/jedis/pull/658 is released
@@ -18,7 +18,7 @@ class RedisDriver {
     new RedisDriver(jedis, key)
   }
 
-  static def uri() {
+  static String uri() {
     def conf = config()
     "redis://:${conf.password}@${conf.hostname}:${conf.port}/0"
   }
@@ -51,7 +51,7 @@ class RedisDriver {
     redis.del(key)
   }
 
-  def size() {
+  int size() {
     redis.llen(key)
   }
 
@@ -61,7 +61,7 @@ class RedisDriver {
 
   private
 
-  def elements() {
+  ArrayList elements() {
     redis.lrange(key, 0, size() - 1).collect {
       slurper.parseText(it)
     }
