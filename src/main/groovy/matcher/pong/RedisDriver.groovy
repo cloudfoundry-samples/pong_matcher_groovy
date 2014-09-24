@@ -49,6 +49,7 @@ class RedisDriver {
 
   def clear() {
     redis.del(key)
+    true
   }
 
   int size() {
