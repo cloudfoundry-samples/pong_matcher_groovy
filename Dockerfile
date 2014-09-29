@@ -1,6 +1,6 @@
 # DOCKER-VERSION 1.2.0
 
-FROM        camelpunch/pong-matcher-base:groovy
+FROM        camelpunch/pong-matcher-base-groovy
 
 # install app as unprivileged user
 ADD         app pong_matcher_groovy
