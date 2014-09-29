@@ -10,7 +10,4 @@ USER        web
 ENV         GROOVY_HOME /groovy
 ENV         PATH $GROOVY_HOME/bin:$PATH
 
-# cache dependencies so that running is fast
-RUN         cd pong_matcher_groovy; ./gradlew installApp
-
-ENTRYPOINT  redis-server & cd pong_matcher_groovy; ./gradlew test
+RUN         redis-server & cd pong_matcher_groovy; ./gradlew test
