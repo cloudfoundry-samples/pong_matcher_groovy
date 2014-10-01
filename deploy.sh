@@ -2,6 +2,7 @@
 
 set -xe
 
+docker pull camelpunch/pong-matcher-groovy
 docker run -t camelpunch/pong-matcher-groovy /bin/bash -c "\
     cd pong_matcher_groovy
     ./gradlew distZip &&
