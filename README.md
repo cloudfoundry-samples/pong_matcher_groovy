@@ -28,7 +28,7 @@ cf create-service rediscloud 25mb baby-redis
 Build the app.
 
 ```bash
-cf app
+cd app
 ./gradlew distZip
 ```
 
