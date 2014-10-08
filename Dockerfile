@@ -8,11 +8,6 @@ RUN     apt-get install -qy build-essential wget
 # create user
 RUN     adduser --disabled-password web
 
-# redis
-ADD     http://download.redis.io/redis-stable.tar.gz redis-stable.tar.gz
-RUN     tar -zxf redis-stable.tar.gz
-RUN     cd redis-stable; make install
-
 # cf
 ADD     https://cli.run.pivotal.io/stable?release=debian64&source=github cf.deb
 RUN     dpkg -i cf.deb
@@ -26,6 +21,11 @@ ADD     http://dl.bintray.com/groovy/maven/groovy-binary-2.4.0-beta-3.zip groovy
 RUN     unzip groovy-binary.zip
 RUN     mv `find /groovy-* -maxdepth 0 -type d` /groovy
 RUN     chown -R web:web /groovy
+
+# redis
+ADD     http://download.redis.io/redis-stable.tar.gz redis-stable.tar.gz
+RUN     tar -zxf redis-stable.tar.gz
+RUN     cd redis-stable; make install
 
 # install app as unprivileged user
 ADD         app pong_matcher_groovy
