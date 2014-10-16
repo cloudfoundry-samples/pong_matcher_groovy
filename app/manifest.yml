@@ -6,4 +6,4 @@ applications:
     path: build/distributions/pong_matcher_groovy.zip
     buildpack: https://github.com/cloudfoundry/java-buildpack
     services:
-      - baby-redis
+      - redis
