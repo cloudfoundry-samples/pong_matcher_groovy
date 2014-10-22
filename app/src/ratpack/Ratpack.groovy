@@ -54,6 +54,15 @@ ratpack {
       }
     }
 
+    get("matches/:id") {
+      def builder = new JsonBuilder()
+      def match = db.matches.find { match ->
+        match.id == pathTokens.id
+      }
+      builder(match)
+      render builder.toString()
+    }
+
     post("results") {
       def slurper = new JsonSlurper()
       def result = slurper.parseText(request.body.text)
