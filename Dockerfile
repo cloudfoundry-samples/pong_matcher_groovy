@@ -13,7 +13,7 @@ ADD     https://cli.run.pivotal.io/stable?release=debian64&source=github cf.deb
 RUN     dpkg -i cf.deb
 
 # install java and unzip
-RUN     apt-get install -y default-jre
+RUN     apt-get install -y openjdk-7-jdk
 RUN     apt-get install -y unzip
 
 # install groovy
