@@ -14,6 +14,8 @@ repositories {
   maven { url "http://repo.springsource.org/repo" } // for springloaded
 }
 
+# code_snippet ratpack-dependencies start
+
 dependencies {
   // SpringLoaded enables runtime hot reloading.
   // It is not part of the app runtime and is not shipped in the distribution.
@@ -27,6 +29,7 @@ dependencies {
 
   testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
 }
+# code_snippet ratpack-dependencies end
 
 run {
  jvmArgs "-Dratpack.port=3000"
