@@ -40,11 +40,13 @@ ratpack {
 
           get {
             def match_request = db.match_requests.find { it.id == pathTokens.id }
-            def found_match = find_unplayed_match(db, match_request)
 
-            if (found_match) {
+            if (match_request) {
+              def found_match = find_unplayed_match(db, match_request) ?: [ id: null ]
               def builder = new JsonBuilder()
-              builder(match_id: found_match.id)
+              builder(id: match_request.id,
+                      player: match_request.requester_id,
+                      match_id: found_match.id)
               render builder.toString()
             } else {
               clientError(404)
