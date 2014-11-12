@@ -32,7 +32,7 @@ dependencies {
 // code_snippet ratpack-dependencies end
 
 run {
- jvmArgs "-Dratpack.port=3000"
+  jvmArgs "-Dratpack.port=3000"
 }
 
 distZip {
