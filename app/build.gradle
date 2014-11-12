@@ -34,3 +34,7 @@ dependencies {
 run {
  jvmArgs "-Dratpack.port=3000"
 }
+
+distZip {
+  archiveName "app.zip"
+}
