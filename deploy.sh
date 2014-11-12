@@ -2,6 +2,7 @@
 
 set -xe
 
+docker pull docker.gocd.cf-app.com:5000/pong-matcher-groovy
 docker run -e "CF_HOME=/pong_matcher_groovy" -t docker.gocd.cf-app.com:5000/pong-matcher-groovy /bin/bash -c "\
     cd pong_matcher_groovy
     ./gradlew distZip &&
