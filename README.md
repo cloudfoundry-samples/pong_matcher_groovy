@@ -28,7 +28,6 @@ cf create-service rediscloud 25mb baby-redis
 Build the app.
 
 ```bash
-cd app
 ./gradlew distZip
 ```
 
@@ -60,7 +59,6 @@ redis-server
 In another terminal, start the application server:
 
 ```bash
-cd app
 ./gradlew run
 ```
 
