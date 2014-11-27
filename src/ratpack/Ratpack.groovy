@@ -61,8 +61,12 @@ ratpack {
       def match = db.matches.find { match ->
         match.id == pathTokens.id
       }
-      builder(match)
-      render builder.toString()
+      if (match) {
+          builder(match)
+          render builder.toString()
+      } else {
+          clientError(404)
+      }
     }
 
     post("results") {
