@@ -70,6 +70,6 @@ export HOST=http://localhost:3000
 
 Now follow the [interaction instructions][interaction].
 
-[acceptance-test]:https://github.com/camelpunch/pong_matcher_acceptance
+[acceptance-test]:https://github.com/cloudfoundry-samples/pong_matcher_acceptance
 [pws]:https://run.pivotal.io
-[interaction]:https://github.com/camelpunch/pong_matcher_grails#interaction-instructions
+[interaction]:https://github.com/cloudfoundry-samples/pong_matcher_grails#interaction-instructions
