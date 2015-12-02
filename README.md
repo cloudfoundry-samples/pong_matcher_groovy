@@ -22,7 +22,7 @@ cf target -o myorg -s myspace
 Sign up for a rediscloud instance.
 
 ```bash
-cf create-service rediscloud 25mb baby-redis
+cf create-service rediscloud 30mb baby-redis
 ```
 
 Build the app.
@@ -56,13 +56,13 @@ brew install redis
 redis-server
 ```
 
-In another terminal, start the application server:
+In another terminal shell and inside the directory of this cloned repository, start the application server:
 
 ```bash
 ./gradlew run
 ```
 
-Export the test host
+Export the test host in another terminal shell:
 
 ```bash
 export HOST=http://localhost:3000
