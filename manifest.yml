@@ -6,4 +6,4 @@ applications:
     path: build/distributions/app.zip
     buildpack: https://github.com/cloudfoundry/java-buildpack
     services:
-      - baby-redis
+      - groovy-db
